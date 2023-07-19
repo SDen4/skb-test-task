@@ -1,0 +1,14 @@
+.task-list {
+  list-style-type: none;
+}
+
+.task-list li {
+  margin-bottom: 12px;
+}
+.task-list li:last-child {
+  margin-bottom: 0;
+}
+
+.task-list-empty {
+  margin: 14px 14px 14px 40px
+}

@@ -5,3 +5,5 @@ export interface ITask {
   deadline: string;
   isDone: boolean;
 }
+
+export type IModalType = 'addNewTask' | 'deleteTask' | null;

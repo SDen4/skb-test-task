@@ -1,0 +1,12 @@
+<div 
+  *ngIf="!(taskList$ | async)?.length" 
+  class="task-list-empty"
+>
+  There is no any task here yet...
+</div>
+
+<ul class="task-list">
+  <li *ngFor="let task of taskList$ | async">
+    <app-task [task]="task"></app-task>
+  </li>
+</ul>

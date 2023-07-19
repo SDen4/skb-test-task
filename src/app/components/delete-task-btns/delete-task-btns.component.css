@@ -1,0 +1,20 @@
+.modal-title {
+  width: 100%;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+}
+
+.buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+}

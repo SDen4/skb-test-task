@@ -12,6 +12,9 @@ import { AddButtonComponent } from './components/add-button/add-button.component
 import { AddTaskFormComponent } from './components/add-task-form/add-task-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FocusDirective } from './directives/focus.directive';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { TaskComponent } from './components/task/task.component';
+import { DeleteTaskBtnsComponent } from './components/delete-task-btns/delete-task-btns.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { FocusDirective } from './directives/focus.directive';
     AddButtonComponent,
     AddTaskFormComponent,
     FocusDirective,
+    TaskListComponent,
+    TaskComponent,
+    DeleteTaskBtnsComponent,
   ],
   imports: [
     BrowserModule,

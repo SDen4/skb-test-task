@@ -1,0 +1,27 @@
+<h2 class="modal-title">Delete task</h2>
+
+<div>
+  <h3 class="text">
+    Are you sure to delete task 
+    <i>"{{deletedTask.deletedTaskId$.value?.title}}"</i>
+    ?
+  </h3>
+
+  <div class="buttons-wrapper">
+    <button 
+      class="red-button" 
+      type="button"
+      (click)="onDeleteHandler()"
+    >
+      Delete
+    </button>
+    
+    <button 
+      class="orange-button" 
+      type="button"
+      (click)="onCancelHandler()"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

@@ -7,4 +7,9 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class AddButtonComponent {
   constructor(public modalService: ModalService) {}
+
+  onClickHandler() {
+    this.modalService.changeModalType('addNewTask');
+    this.modalService.openModal();
+  }
 }

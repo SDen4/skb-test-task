@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from './services/modal.service';
+import { DeletedTaskService } from './services/deleted-task.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { ModalService } from './services/modal.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(public modalService: ModalService) {}
+  constructor(
+    public modalService: ModalService,
+    public deletedTaskId: DeletedTaskService,
+  ) {}
 }

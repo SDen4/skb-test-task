@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { DeletedTaskService } from 'src/app/services/deleted-task.service';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -7,8 +8,14 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent {
-  @Input()
-  modalTitle!: string;
+  constructor(
+    public modalService: ModalService,
+    private deletedTask: DeletedTaskService,
+  ) {}
 
-  constructor(public modalService: ModalService) {}
+  onClickHandler() {
+    this.modalService.closeModal();
+    this.modalService.changeModalType(null);
+    this.deletedTask.changeDeletedTaskId(null);
+  }
 }

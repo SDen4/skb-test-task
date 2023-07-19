@@ -1,0 +1,9 @@
+<div class="task-wrapper" [ngStyle]="{background: createTaskColor()}">
+  <h3>{{task?.title}}</h3>
+
+  <span>
+    <span>Deadline: </span>
+    <i>{{task?.deadline}}</i>
+    <button class="red-button button" (click)="onDeleteHandler()">Delete</button>
+  </span>
+</div>

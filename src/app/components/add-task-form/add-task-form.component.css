@@ -32,3 +32,11 @@
   background-color: lightgrey;
   cursor: default;
 }
+
+.modal-title {
+  width: 100%;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+}

@@ -42,8 +42,6 @@ export class AddTaskFormComponent {
     if (this.title.errors || this.description.errors || this.deadline.errors)
       return;
 
-    console.log(this.form.value);
-
     this.store.dispatch(
       addTask({
         task: {
