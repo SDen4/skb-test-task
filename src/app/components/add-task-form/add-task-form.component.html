@@ -1,5 +1,5 @@
 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="text" class="input" formControlName="title" placeholder="Title" autofocus />
+  <input type="text" class="input" formControlName="title" placeholder="Title" appFocus/>
   <p *ngIf="title.errors && title.touched" class="error-msg">
     Please, fill the title (min 5)
   </p>

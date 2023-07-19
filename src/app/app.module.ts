@@ -11,6 +11,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
 import { AddTaskFormComponent } from './components/add-task-form/add-task-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FocusDirective } from './directives/focus.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ModalComponent,
     AddButtonComponent,
     AddTaskFormComponent,
+    FocusDirective,
   ],
   imports: [
     BrowserModule,
