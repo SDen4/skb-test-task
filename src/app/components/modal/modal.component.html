@@ -1,0 +1,17 @@
+<div class="modal-wrapper" (click)="modalService.closeModal()"></div>
+
+<div class="modal-window">
+  <h2 class="modal-title">{{modalTitle}}</h2>
+
+  <div class="modal-content">
+    <ng-content></ng-content>
+  </div>
+
+<button 
+  type="button" 
+  class="close-button button"
+  (click)="modalService.closeModal()"
+>
+  
+</button>
+</div>

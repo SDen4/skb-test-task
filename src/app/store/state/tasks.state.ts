@@ -1,4 +1,4 @@
-import { ITask } from 'src/model';
+import { ITask } from 'src/app/model';
 
 export type ITaskListState = ITask[];
 

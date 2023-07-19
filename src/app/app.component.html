@@ -1,3 +1,9 @@
 <app-header></app-header>
 
-<main class="main"></main>
+<app-modal *ngIf="modalService.isModalVisible$ | async" modalTitle="Add New Task">
+   <app-add-task-form></app-add-task-form> 
+</app-modal>
+
+<main class="main">
+
+</main>

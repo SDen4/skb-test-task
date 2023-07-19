@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ITask } from 'src/model';
+import { ITask } from 'src/app/model';
 
 export enum ETaskActions {
   AddTask = '[TASK] Add Task',
