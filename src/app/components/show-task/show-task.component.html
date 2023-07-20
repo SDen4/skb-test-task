@@ -1,0 +1,17 @@
+<h2 class="modal-title">Task</h2>
+
+<div class="wrapper">
+  <i>Title:</i>
+  <p class="text">{{changedTask.changedTask$.value?.title}}</p>
+
+  <i>Description:</i>
+  <p class="text">{{changedTask.changedTask$.value?.description}}</p>
+
+  <i>Deadline:</i>
+  <p class="text">{{changedTask.changedTask$.value?.deadline}}</p>
+
+  <div class="buttons-wrapper">
+    <button (click)="onEditlHandler()">Edit</button>
+    <button class="orange-button" (click)="onCancelHandler()">Cancel</button>
+  </div>
+</div> 

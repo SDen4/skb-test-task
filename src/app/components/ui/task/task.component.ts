@@ -19,7 +19,8 @@ export class TaskComponent {
     private changedTask: ChangedTaskService,
   ) {}
 
-  onDeleteHandler() {
+  onDeleteHandler(event: { stopImmediatePropagation: () => void }) {
+    event.stopImmediatePropagation();
     if (!this.task?.title) return;
 
     this.changedTask.setChangedTask(this.task);
@@ -47,11 +48,20 @@ export class TaskComponent {
     return '';
   }
 
-  onEditHandler() {
+  onEditHandler(event: { stopImmediatePropagation: () => void }) {
+    event.stopImmediatePropagation();
     if (!this.task?.id) return;
 
     this.changedTask.setChangedTask(this.task);
     this.modalService.changeModalType('changeTask');
+    this.modalService.openModal();
+  }
+
+  onTaskClick() {
+    if (!this.task?.id) return;
+
+    this.changedTask.setChangedTask(this.task);
+    this.modalService.changeModalType('showTask');
     this.modalService.openModal();
   }
 }

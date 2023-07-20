@@ -1,4 +1,4 @@
-<div class="task-wrapper" [ngStyle]="{background: createTaskColor()}">
+<div class="task-wrapper" [ngStyle]="{background: createTaskColor()}" (click)="onTaskClick()">
   <h3>{{ 
     task?.title?.length! > maxTaskTitleLength 
       ? task?.title?.slice(0, maxTaskTitleLength) + '...' 
@@ -11,8 +11,8 @@
     <i>{{task?.deadline}}</i>
 
     <div class="flex">
-      <button class="red-button button" (click)="onDeleteHandler()">Delete</button>
-      <button class="orange-button button" (click)="onEditHandler()">Edit</button>
+      <button class="red-button button" (click)="onDeleteHandler($event)">Delete</button>
+      <button class="orange-button button" (click)="onEditHandler($event)">Edit</button>
     </div>
   </div>
 </div>

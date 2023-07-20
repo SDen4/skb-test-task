@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  margin-bottom: 12px;
+  font-size: 16px;
+  padding: 3px;
+}
+
+.input:first-child {
+  margin-bottom: 0;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid lightgrey;
+}
+
+.error-msg {
+  color: red;
+  padding: 3px;
+}
+
+.btn-disabled {
+  background-color: lightgrey;
+  cursor: default;
+}
+
+.modal-title {
+  width: 100%;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+}
