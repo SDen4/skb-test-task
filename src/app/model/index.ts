@@ -6,4 +6,4 @@ export interface ITask {
   isDone: boolean;
 }
 
-export type IModalType = 'addNewTask' | 'deleteTask' | null;
+export type IModalType = 'addNewTask' | 'deleteTask' | 'changeTask' | null;

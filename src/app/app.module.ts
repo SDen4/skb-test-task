@@ -15,6 +15,7 @@ import { FocusDirective } from './directives/focus.directive';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskComponent } from './components/task/task.component';
 import { DeleteTaskBtnsComponent } from './components/delete-task-btns/delete-task-btns.component';
+import { EditTaskFormComponent } from './components/edit-task-form/edit-task-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DeleteTaskBtnsComponent } from './components/delete-task-btns/delete-ta
     TaskListComponent,
     TaskComponent,
     DeleteTaskBtnsComponent,
+    EditTaskFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,10 @@
    <app-delete-task-btns
       *ngIf="(modalService.modalType$ | async) === 'deleteTask'"
    ></app-delete-task-btns>
+
+   <app-edit-task-form
+   *ngIf="(modalService.modalType$ | async) === 'changeTask'"
+></app-edit-task-form>
 </app-modal>
 
 <main class="main">

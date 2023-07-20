@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { ITask } from 'src/app/model';
-import { DeletedTaskService } from 'src/app/services/deleted-task.service';
+import { ChangedTaskService } from 'src/app/services/changed-task.service';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -12,15 +12,17 @@ import { ModalService } from 'src/app/services/modal.service';
 export class TaskComponent {
   @Input() task: ITask | undefined;
 
+  maxTaskTitleLength = 30;
+
   constructor(
     public modalService: ModalService,
-    private deletedTaskId: DeletedTaskService,
+    private changedTask: ChangedTaskService,
   ) {}
 
   onDeleteHandler() {
     if (!this.task?.title) return;
 
-    this.deletedTaskId.changeDeletedTaskId(this.task);
+    this.changedTask.setChangedTask(this.task);
     this.modalService.changeModalType('deleteTask');
     this.modalService.openModal();
   }
@@ -43,5 +45,13 @@ export class TaskComponent {
     }
 
     return '';
+  }
+
+  onEditHandler() {
+    if (!this.task?.id) return;
+
+    this.changedTask.setChangedTask(this.task);
+    this.modalService.changeModalType('changeTask');
+    this.modalService.openModal();
   }
 }

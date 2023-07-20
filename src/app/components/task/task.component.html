@@ -1,9 +1,18 @@
 <div class="task-wrapper" [ngStyle]="{background: createTaskColor()}">
-  <h3>{{task?.title}}</h3>
+  <h3>{{ 
+    task?.title?.length! > maxTaskTitleLength 
+      ? task?.title?.slice(0, maxTaskTitleLength) + '...' 
+      : task?.title
+  }}</h3>
 
-  <span>
+
+  <div class="flex">
     <span>Deadline: </span>
     <i>{{task?.deadline}}</i>
-    <button class="red-button button" (click)="onDeleteHandler()">Delete</button>
-  </span>
+
+    <div class="flex">
+      <button class="red-button button" (click)="onDeleteHandler()">Delete</button>
+      <button class="orange-button button" (click)="onEditHandler()">Edit</button>
+    </div>
+  </div>
 </div>

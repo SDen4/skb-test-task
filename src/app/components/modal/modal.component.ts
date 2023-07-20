@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DeletedTaskService } from 'src/app/services/deleted-task.service';
+import { ChangedTaskService } from 'src/app/services/changed-task.service';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { ModalService } from 'src/app/services/modal.service';
 export class ModalComponent {
   constructor(
     public modalService: ModalService,
-    private deletedTask: DeletedTaskService,
+    private changedTask: ChangedTaskService,
   ) {}
 
   onClickHandler() {
     this.modalService.closeModal();
     this.modalService.changeModalType(null);
-    this.deletedTask.changeDeletedTaskId(null);
+    this.changedTask.setChangedTask(null);
   }
 }

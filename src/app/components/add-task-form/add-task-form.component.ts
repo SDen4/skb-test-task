@@ -53,5 +53,6 @@ export class AddTaskFormComponent {
     );
 
     this.modalService.closeModal();
+    this.modalService.changeModalType(null);
   }
 }

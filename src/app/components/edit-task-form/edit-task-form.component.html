@@ -1,0 +1,37 @@
+<h2 class="modal-title">Edit Task</h2>
+
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" class="input" placeholder="Title" appFocus formControlName="title"/>
+  <p *ngIf="title.errors && title.touched" class="error-msg">
+    Please, fill the title (min 5)
+  </p>
+
+  <input type="text" class="input" placeholder="Description" formControlName="description"/>
+  <p *ngIf="description.errors && description.touched" class="error-msg">
+    Please, fill the description (min 5)
+  </p>
+
+
+  <input type="date" class="input" formControlName="deadline"/>
+  <p *ngIf="deadline.errors && deadline.touched" class="error-msg">
+    Please, fill the deadline 
+  </p>
+
+  <div class="buttons-wrapper">
+    <button 
+      type="submit" 
+      [ngClass]="
+        !form.controls.title.value || 
+        !form.controls.description.value || 
+        !form.controls.deadline.value || 
+        title.errors ||
+        description.errors ||
+        deadline.errors 
+        ? 'btn-disabled' : ''"
+    >
+      Save
+    </button>
+
+    <button class="orange-button" (click)="onCancelHandler()">Cancel</button>
+  </div>
+</form> 
