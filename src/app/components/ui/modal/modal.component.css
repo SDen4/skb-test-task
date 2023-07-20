@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(128, 128, 128, 0.9);
+  z-index: 1;
 }
 
 .modal-window {
@@ -20,6 +21,7 @@
   border-radius: 6px;
   padding: 24px;
   background-color: #fff;
+  z-index: 2;
 }
 
 .button {

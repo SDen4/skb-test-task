@@ -11,7 +11,14 @@
   <p class="text">{{changedTask.changedTask$.value?.deadline}}</p>
 
   <div class="buttons-wrapper">
-    <button (click)="onEditlHandler()">Edit</button>
+    <button 
+      (click)="onEditlHandler()"
+      [ngClass]="{'disabled-button': changedTask.changedTask$.value?.isDone}"
+      [disabled]="changedTask.changedTask$.value?.isDone"
+    >
+      Edit
+    </button>
+    
     <button class="orange-button" (click)="onCancelHandler()">Cancel</button>
   </div>
 </div> 

@@ -22,7 +22,7 @@ button {
   border-radius: 3px;
   padding: 6px 9px;
   transition: 0.3s;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   background-color: blue;
   cursor: pointer;
@@ -45,6 +45,15 @@ button:hover {
 .red-button:hover {
   background-color: darkred;
 }
+
+.disabled-button {
+  background-color: lightgrey;
+  cursor: default;
+}
+.disabled-button:hover {
+  background-color: lightgrey;
+}
+
 
 .close-button {
   width: 22px;

@@ -1,4 +1,5 @@
 .task-wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,4 +25,21 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.cross {
+  text-decoration:line-through;
+  color: grey;
+}
+
+.image-wrapper {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+}
+
+.image-wrapper img {
+  width: 20px;
+  height: 20px;
+
 }

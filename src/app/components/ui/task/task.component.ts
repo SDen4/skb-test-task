@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 import { ITask } from 'src/app/model';
 import { ChangedTaskService } from 'src/app/services/changed-task.service';
 import { ModalService } from 'src/app/services/modal.service';
+import { changeTask } from 'src/app/store/actions/tasks.actions';
 
 @Component({
   selector: 'app-task',
@@ -17,6 +19,7 @@ export class TaskComponent {
   constructor(
     public modalService: ModalService,
     private changedTask: ChangedTaskService,
+    private store: Store<ITask[]>,
   ) {}
 
   onDeleteHandler(event: { stopImmediatePropagation: () => void }) {
@@ -63,5 +66,16 @@ export class TaskComponent {
     this.changedTask.setChangedTask(this.task);
     this.modalService.changeModalType('showTask');
     this.modalService.openModal();
+  }
+
+  onDoneHandler(event: { stopImmediatePropagation: () => void }) {
+    event.stopImmediatePropagation();
+    if (!this.task?.id) return;
+
+    this.store.dispatch(
+      changeTask({
+        task: { ...this.task, isDone: !this.task.isDone } as ITask,
+      }),
+    );
   }
 }

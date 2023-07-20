@@ -28,7 +28,7 @@
   padding: 3px;
 }
 
-.btn-disabled {
+.disabled-button {
   background-color: lightgrey;
   cursor: default;
 }
