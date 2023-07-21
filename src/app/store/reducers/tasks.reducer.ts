@@ -1,6 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import { initTaskListState } from '../state/tasks.state';
-import { addTask, changeTask, deleteTask } from '../actions/tasks.actions';
+import {
+  addTask,
+  changeTask,
+  replaceTasks,
+  deleteTask,
+} from '../actions/tasks.actions';
 
 export const TASKS_REDUCER_NODE = 'taskList';
 
@@ -16,5 +21,9 @@ export const taskListReducer = createReducer(
   on(changeTask, (state, { task }) => {
     const taskList = state.map((el) => (el.id === task.id ? task : el));
     return [...taskList];
+  }),
+
+  on(replaceTasks, (state, { tasks }) => {
+    return [...tasks];
   }),
 );

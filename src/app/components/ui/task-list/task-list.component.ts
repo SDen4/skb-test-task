@@ -1,6 +1,8 @@
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { ITask } from 'src/app/model';
+import { replaceTasks } from 'src/app/store/actions/tasks.actions';
 import { taskListSelect } from 'src/app/store/selectors/tasks.selectors';
 
 @Component({
@@ -9,7 +11,22 @@ import { taskListSelect } from 'src/app/store/selectors/tasks.selectors';
   styleUrls: ['./task-list.component.css'],
 })
 export class TaskListComponent {
-  taskList$ = this.store$.pipe(select(taskListSelect));
+  taskList$ = this.store.pipe(select(taskListSelect));
 
-  constructor(private store$: Store<ITask[]>) {}
+  list: ITask[] = [];
+
+  constructor(private store: Store<ITask[]>) {}
+
+  drop(event: CdkDragDrop<ITask[]>) {
+    this.taskList$.subscribe((v) => (this.list = v));
+
+    const newTaskList = this.list.concat();
+    const curValue = newTaskList[event.currentIndex];
+    const prevValue = newTaskList[event.previousIndex];
+
+    newTaskList.splice(event.previousIndex, 1, curValue);
+    newTaskList.splice(event.currentIndex, 1, prevValue);
+
+    this.store.dispatch(replaceTasks({ tasks: newTaskList }));
+  }
 }

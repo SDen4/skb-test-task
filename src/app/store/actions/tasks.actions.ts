@@ -5,6 +5,7 @@ export enum ETaskActions {
   AddTask = '[TASK] Add Task',
   DeleteTask = '[TASK] Delete Task',
   ChangeTask = '[TASK] Change Task',
+  ReplaceTask = '[TASK] Replace Task',
 }
 
 export const addTask = createAction(
@@ -18,4 +19,8 @@ export const deleteTask = createAction(
 export const changeTask = createAction(
   ETaskActions.ChangeTask,
   props<{ task: ITask }>(),
+);
+export const replaceTasks = createAction(
+  ETaskActions.ReplaceTask,
+  props<{ tasks: ITask[] }>(),
 );

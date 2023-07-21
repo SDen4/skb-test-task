@@ -60,8 +60,6 @@ export class EditTaskFormComponent {
     )
       return;
 
-    console.log(this.form.controls.title.value);
-
     this.store.dispatch(
       changeTask({
         task: {

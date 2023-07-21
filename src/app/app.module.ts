@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -17,6 +18,7 @@ import { TaskComponent } from './components/ui/task/task.component';
 import { DeleteTaskBtnsComponent } from './components/delete-task-btns/delete-task-btns.component';
 import { EditTaskFormComponent } from './components/edit-task-form/edit-task-form.component';
 import { ShowTaskComponent } from './components/show-task/show-task.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,8 +40,11 @@ import { ShowTaskComponent } from './components/show-task/show-task.component';
     StoreDevtoolsModule.instrument(),
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

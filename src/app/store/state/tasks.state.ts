@@ -1,8 +1,6 @@
 import { ITask } from 'src/app/model';
 
-export type ITaskListState = ITask[];
-
-export const initTaskListState: ITaskListState = [
+export const initTaskListState: ITask[] = [
   {
     id: 123,
     title: 'Test task red',

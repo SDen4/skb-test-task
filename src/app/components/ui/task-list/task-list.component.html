@@ -5,8 +5,8 @@
   There is no any task here yet...
 </div>
 
-<ul class="task-list">
-  <li *ngFor="let task of taskList$ | async">
+<ul cdkDropList class="task-list" (cdkDropListDropped)="drop($event)">
+  <li *ngFor="let task of taskList$ | async" cdkDrag>
     <app-task [task]="task"></app-task>
   </li>
 </ul>
