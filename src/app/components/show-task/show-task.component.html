@@ -17,6 +17,12 @@
       [disabled]="changedTask.changedTask$.value?.isDone"
     >
       Edit
+      <p 
+        *ngIf="changedTask.changedTask$.value?.isDone" 
+        class="tooltip"
+      >
+        You can't edit done task
+      </p>
     </button>
     
     <button class="orange-button" (click)="onCancelHandler()">Cancel</button>

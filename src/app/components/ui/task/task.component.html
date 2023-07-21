@@ -22,6 +22,7 @@
         [disabled]="task?.isDone"
       >
         Edit
+        <p *ngIf="task?.isDone" class="tooltip">You can't edit done task</p>
       </button>
       
         <button 

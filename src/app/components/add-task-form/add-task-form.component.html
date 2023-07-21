@@ -23,6 +23,12 @@
       [ngClass]="title.errors || description.errors || deadline.errors ? 'disabled-button' : ''"
     >
       Add
+      <p 
+        *ngIf="title.errors || description.errors || deadline.errors" 
+        class="tooltip"
+      >
+        Please fill all fields
+      </p>
     </button>
 
     <button type="reset" class="orange-button">Clear</button>

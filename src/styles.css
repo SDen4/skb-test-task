@@ -27,6 +27,7 @@ button {
   background-color: blue;
   cursor: pointer;
   margin: 0;
+  position: relative;
 }
 button:hover {
   background-color: darkblue;
@@ -78,4 +79,19 @@ button:hover {
 }
 .close-button::after {
   transform: rotate(-45deg);
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 3px;
+  padding: 6px;
+  border-radius: 3px;
+  min-width: 150px;
+  background-color: grey;
+  color: #fff;
+  display: none;
+}
+button:hover .tooltip {
+  display: block;
 }
