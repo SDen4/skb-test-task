@@ -1,11 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
-import { initTaskListState } from '../state/tasks.state';
+
 import {
   addTask,
   changeTask,
-  replaceTasks,
   deleteTask,
+  replaceTasks,
 } from '../actions/tasks.actions';
+import { initTaskListState } from '../state/tasks.state';
 
 export const TASKS_REDUCER_NODE = 'taskList';
 

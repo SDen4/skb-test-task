@@ -1,9 +1,11 @@
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { ITask } from 'src/app/model';
+import { select, Store } from '@ngrx/store';
+
 import { replaceTasks } from 'src/app/store/actions/tasks.actions';
 import { taskListSelect } from 'src/app/store/selectors/tasks.selectors';
+
+import { ITask } from 'src/app/model';
 
 @Component({
   selector: 'app-task-list',

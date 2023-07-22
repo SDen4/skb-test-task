@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { ITask } from 'src/app/model';
+
 import { ModalService } from 'src/app/services/modal.service';
+
 import { addTask } from 'src/app/store/actions/tasks.actions';
+
+import { ITask } from 'src/app/model';
 
 @Component({
   selector: 'app-add-task-form',
