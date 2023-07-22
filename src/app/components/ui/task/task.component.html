@@ -1,17 +1,26 @@
 <div class="task-wrapper" [ngStyle]="{background: createTaskColor()}" (click)="onTaskClick()">
-  <div *ngIf="task?.isDone" class="image-wrapper">
-    <img src="../../../../assets/iconV.png" alt="done!" />
+  <div class="flex title-wrapper">
+    <div *ngIf="task?.isDone" class="image-wrapper">
+      <img src="../../../../assets/iconV.png" alt="done!" />
+    </div>
+  
+    <h3 [ngClass]="task?.isDone ? 'cross' : ''">{{ 
+      task?.title?.length! > maxTaskTitleLength 
+        ? task?.title?.slice(0, maxTaskTitleLength) + '...' 
+        : task?.title
+    }}</h3>
+
+    <div class="flex deadline-wrapper desktop">
+      <span [ngClass]="task?.isDone ? 'cross' : ''">Deadline: </span>
+      <i [ngClass]="task?.isDone ? 'cross' : ''">{{task?.deadline}}</i> 
+    </div>
   </div>
 
-  <h3 [ngClass]="task?.isDone ? 'cross' : ''">{{ 
-    task?.title?.length! > maxTaskTitleLength 
-      ? task?.title?.slice(0, maxTaskTitleLength) + '...' 
-      : task?.title
-  }}</h3>
-
-  <div class="flex">
-    <span [ngClass]="task?.isDone ? 'cross' : ''">Deadline: </span>
-    <i [ngClass]="task?.isDone ? 'cross' : ''">{{task?.deadline}}</i> 
+  <div class="flex btns-wrapper">
+    <div class="flex deadline-wrapper mobiles">
+      <span [ngClass]="task?.isDone ? 'cross' : ''">Deadline: </span>
+      <i [ngClass]="task?.isDone ? 'cross' : ''">{{task?.deadline}}</i> 
+    </div>
 
     <div class="flex">
       <button class="red-button button" (click)="onDeleteHandler($event)">Delete</button>
@@ -25,10 +34,10 @@
         <p *ngIf="task?.isDone" class="tooltip">You can't edit done task</p>
       </button>
       
-        <button 
-        class="button" 
-        [ngClass]="task?.isDone ? 'red-button' : '' " 
-        (click)="onDoneHandler($event)"
+      <button 
+      class="button" 
+      [ngClass]="task?.isDone ? 'red-button' : '' " 
+      (click)="onDoneHandler($event)"
       >
         {{ task?.isDone ? 'Back to work' : 'Done'}}
       </button>

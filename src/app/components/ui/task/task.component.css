@@ -8,23 +8,38 @@
   border-radius: 3px;
   background-color: whitesmoke;
   box-shadow: 0px 2px 10px lightblue;
-  max-width: 50%;
   cursor: pointer;
   transition: 0.3s;
 }
-
 .task-wrapper:hover {
   box-shadow: 3px 5px 13px rgb(117, 167, 184);
 }
 
+.btns-wrapper {
+  margin-left: 24px;
+}
+
 .button {
-  margin-left: 12px;
+  margin-right: 12px;
+}
+.button:last-child {
+  margin-right: 0;
 }
 
 .flex {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.title-wrapper {
+  max-width: 100%;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.deadline-wrapper span {
+  margin-left: 12px;
 }
 
 .cross {
@@ -41,5 +56,54 @@
 .image-wrapper img {
   width: 20px;
   height: 20px;
+}
 
+.mobiles {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .task-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .title-wrapper {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .btns-wrapper {
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .btns-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .button {
+    margin-right: 3px;
+  }
+
+  .deadline-wrapper {
+    margin-bottom: 6px;
+    margin-right: 6px;
+  }
+
+  .deadline-wrapper span {
+    margin-left: 0;
+  }
+  
+  .mobiles {
+    display: flex;
+  }
+
+  .desktop {
+    display: none;
+  }
 }
