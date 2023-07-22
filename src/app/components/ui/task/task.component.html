@@ -1,7 +1,7 @@
 <div class="task-wrapper" [ngStyle]="{background: createTaskColor()}" (click)="onTaskClick()">
   <div class="flex title-wrapper">
     <div *ngIf="task?.isDone" class="image-wrapper">
-      <img src="../../../../assets/iconV.png" alt="done!" />
+      <img src="assets/iconV.png" alt="done!" />
     </div>
   
     <h3 [ngClass]="task?.isDone ? 'cross' : ''">{{ 
